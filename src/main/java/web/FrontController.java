@@ -39,6 +39,7 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+        // Save it in either application or session state
 
     }
 
@@ -51,6 +52,7 @@ public class FrontController extends HttpServlet
         {
             request.setCharacterEncoding("UTF-8");
             response.setCharacterEncoding("UTF-8");
+
             Command action = Command.fromPath(request, database);
 
             if (action instanceof CommandUnknown) {
