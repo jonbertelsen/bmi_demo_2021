@@ -19,7 +19,9 @@
 
             <div class="col-sm-4">
 
-                <h2>BMI beregner</h2>
+                <div class="text-center">
+                    <h1>BMI beregner</h1>
+                </div>
 
                 <form method="post" action="${pageContext.request.contextPath}/fc/bmiresult">
                     <div class="form-group">
@@ -31,35 +33,44 @@
                         <input id="weight" name="weight" type="text" class="form-control"/><br/>
                     </div>
 
-                    <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
 
-                    <label for="sport">Din primære idræt:</label>
+                    <div class="form-group mt-2">
+                        <label class="form-check-label" for="sport">Din primære idræt:</label>
 
-                    <select name="sport" id="sport">
-                        <c:forEach var="sport" items="${applicationScope.sportList}">
-                             <option value="${sport.sport_id}">${sport.name}</option>
-                        </c:forEach>
-                    </select>
+                        <select class="form-control" name="sport" id="sport">
+                            <c:forEach var="sport" items="${applicationScope.sportList}">
+                                 <option value="${sport.sport_id}">${sport.name}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
 
                     <br/>
 
-                    <input type="checkbox" id="hobby1" name="hobby" value="1">
-                    <label for="vehicle1"> Jeg går op i sund kost</label><br>
-                    <input type="checkbox" id="hobby2" name="hobby" value="2">
-                    <label for="vehicle2"> Jeg har et sommerhus</label><br>
-                    <input type="checkbox" id="hobby3" name="hobby" value="3">
-                    <label for="vehicle3"> Jeg har et kæledyr</label><br><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby1" name="hobby" value="1">
+                        <label  class="form-check-label" for="vehicle1"> Jeg går op i sund kost</label><br>
+                        <input class="form-check-input" type="checkbox" id="hobby2" name="hobby" value="2">
+                        <label  class="form-check-label" for="vehicle2"> Jeg har et sommerhus</label><br>
+                        <input class="form-check-input" type="checkbox" id="hobby3" name="hobby" value="3">
+                        <label  class="form-check-label" for="vehicle3"> Jeg har et kæledyr</label><br><br>
+                    </div>
 
                     <c:if test="${requestScope.error != null}">
                         <p style="color:red;">
                                 ${requestScope.error}
                         </p>
                     </c:if>
-
-                    <button type="submit" class="btn btn-primary">Beregn BMI</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Beregn BMI</button>
+                    </div>
                 </form>
 
 

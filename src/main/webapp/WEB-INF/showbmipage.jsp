@@ -12,14 +12,14 @@
         <h1>Hello ${sessionScope.email} </h1>
         This is a list of all BMI Entries in the database so far:
 
-        <table>
-            <thead><th>Id</th><th>BMI</th><th>Højde</th><th>Vægt</th><th>Køn</th></thead>
+        <table class="table table-striped">
+            <tr><thead><th>Id</th><th>BMI</th><th>Højde</th><th>Vægt</th><th>Køn</th></thead></tr>
             <c:forEach var="bmiEntry" items="${requestScope.bmiEntryList}">
                 <tr>
                     <td>${bmiEntry.id}</td>
                     <td>${bmiEntry.bmi}</td>
                     <td>${bmiEntry.height}</td>
-                    <td>${bmiEntry.weight}<td>
+                    <td>${bmiEntry.weight}</td>
                     <td>${bmiEntry.gender}</td>
                 </tr>
             </c:forEach>
