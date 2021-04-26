@@ -1,0 +1,39 @@
+
+@startuml
+
+Title Class diagram
+
+hide circle
+
+
+class Customer {
+  name
+  address
+  getAllCustomers()
+  Customer getCustomerById(int id)
+}
+
+class Order {
+   id
+   date
+}
+
+class OrderLine {
+    product_id
+    order_id
+}
+
+class Product {
+    id
+    name
+    price
+}
+
+Customer "1" -- "*" Order: places >
+Order "1" -right- "*" OrderLine
+OrderLine "*" -right- "1" Product
+
+@enduml
+
+
+

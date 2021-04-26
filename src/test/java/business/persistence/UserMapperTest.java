@@ -34,7 +34,7 @@ public class UserMapperTest {
             // reset test database
             try ( Statement stmt = database.connect().createStatement() ) {
                 stmt.execute("drop table if exists users" );
-                stmt.execute("create table startcode_test.users LIKE startcode.users;" );
+                stmt.execute("create table bmi_test.users LIKE bmi.users;" );
                 stmt.execute(
                     "insert into users values " +
                     "(1,'jens@somewhere.com','jensen','customer'), " +

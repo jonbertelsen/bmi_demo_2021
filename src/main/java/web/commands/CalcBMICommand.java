@@ -39,9 +39,17 @@ public class CalcBMICommand extends CommandUnprotectedPage
         double height = 0.0;
         double weight = 0.0;
         double bmi = 0.0;
+        int sport_id = 0;
         String category = "";
         String gender = request.getParameter("gender");
-        int sport_id = Integer.parseInt(request.getParameter("sport"));
+        try
+        {
+            sport_id = Integer.parseInt(request.getParameter("sport"));
+        }
+        catch (NumberFormatException ex)
+        {
+            throw new UserException("Der er noget galt med sport_id");
+        }
 
         String[] hobbies = request.getParameterValues("hobby");
         List<String> hobbyListStrings = null;

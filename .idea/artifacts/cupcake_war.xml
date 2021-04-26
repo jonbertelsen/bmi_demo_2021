@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="bmi:war">
+  <artifact type="war" name="cupcake:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>bmi</module>
+        <module>cupcake</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="archive" name="bmi-1.0.war">
-      <element id="artifact" artifact-name="bmi:war exploded" />
+      <element id="artifact" artifact-name="cupcake:war exploded" />
     </root>
   </artifact>
 </component>

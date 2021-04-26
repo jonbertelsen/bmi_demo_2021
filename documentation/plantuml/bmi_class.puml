@@ -1,0 +1,41 @@
+@startuml
+
+Title Domænediagram for CupCake Webshop
+hide methods
+hide circle
+class Kunde {
+}
+
+class Ordre {
+}
+
+class Bottom{
+id
+name
+}
+
+class Topping {
+id
+name
+}
+
+class Kurv {
+}
+
+class CupCake {
+	name
+	id
+	topping_id
+	bottom_id
+}
+
+Kunde "1" -right- "1" Kurv
+Kunde "1" -left- "*" Ordre
+
+Ordre "1" -- "*" CupCake
+Kurv "1" -- "*"  CupCake
+CupCake "*" -left- "1" Bottom
+CupCake "*" -right- "1" Topping
+
+
+@enduml

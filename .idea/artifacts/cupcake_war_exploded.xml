@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="bmi:war exploded">
+  <artifact type="exploded-war" name="cupcake:war exploded">
     <output-path>$PROJECT_DIR$/target/bmi-1.0</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>bmi</module>
+        <module>cupcake</module>
         <packaging>war</packaging>
       </options>
     </properties>

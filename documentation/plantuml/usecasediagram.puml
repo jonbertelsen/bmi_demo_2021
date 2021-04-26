@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+Title Use Case Diagram
+actor Kunde
+actor Admin
+rectangle PaymentGateway <<actor>>
+rectangle GLS <<actor>>
+rectangle webshop {
+    (Find vare)
+    (Login)
+    (Ekspeder ordrer)
+    (Køb vare)
+    (Se ordrer)
+    Kunde -- (Køb vare)
+        (Køb vare) -- PaymentGateway
+        (Køb vare) -- GLS
+    Kunde -- (Find vare)
+
+    Admin -- (Find vare)
+  (Find vare) .right.> (Login) : include
+  (Ekspeder ordrer) .right.> (Login) : include
+    Admin -- (Se ordrer)
+    Admin -- (Ekspeder ordrer)
+
+}
+@enduml

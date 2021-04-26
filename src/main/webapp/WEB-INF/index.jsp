@@ -24,6 +24,7 @@
                 </div>
 
                 <form method="post" action="${pageContext.request.contextPath}/fc/bmiresult">
+
                     <div class="form-group">
                         <label for="height">Højde i cm: </label>
                         <input id="height" name="height" type="text" class="form-control"/>
